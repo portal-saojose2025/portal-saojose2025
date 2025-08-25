@@ -1,23 +1,27 @@
-// Carregar imagens automaticamente
-const carouselContainer = document.getElementById('carousel');
-const imagens = ['imagens/exemplo1.jpg', 'imagens/exemplo2.jpg', 'imagens/exemplo3.jpg'];
-let index = 0;
-
-function mostrarImagem() {
-  carouselContainer.innerHTML = `<img src="${imagens[index]}" alt="Foto ${index+1}">`;
-  index = (index + 1) % imagens.length;
+// Carregar fotos automaticamente
+async function carregarFotos() {
+  const fotosContainer = document.getElementById("fotos");
+  const fotos = ["foto1.jpg", "foto2.jpg", "foto3.jpg"]; // adicione mais nomes
+  fotos.forEach(foto => {
+    const img = document.createElement("img");
+    img.src = "images/" + foto;
+    fotosContainer.appendChild(img);
+  });
 }
 
-setInterval(mostrarImagem, 3000);
-mostrarImagem();
-
 // Carregar vídeos automaticamente
-const videoGallery = document.getElementById('videoGallery');
-const videos = ['videos/exemplo1.mp4', 'videos/exemplo2.mp4'];
+async function carregarVideos() {
+  const videosContainer = document.getElementById("videos-container");
+  const videos = ["video1.mp4", "video2.mp4"]; // adicione mais nomes
+  videos.forEach(video => {
+    const vid = document.createElement("video");
+    vid.src = "videos/" + video;
+    vid.controls = true;
+    videosContainer.appendChild(vid);
+  });
+}
 
-videos.forEach(video => {
-  const vid = document.createElement('video');
-  vid.src = video;
-  vid.controls = true;
-  videoGallery.appendChild(vid);
-});
+window.onload = () => {
+  carregarFotos();
+  carregarVideos();
+};

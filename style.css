@@ -2,51 +2,43 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f9;
-  color: #333;
+  background: #f4f4f4;
+  color: #222;
 }
-
 header {
-  background: #004080;
-  color: white;
-  padding: 15px;
+  background: #003366;
+  color: #fff;
   text-align: center;
+  padding: 1em;
 }
-
-header nav ul {
+header img.capa {
+  max-width: 100%;
+  border-radius: 12px;
+}
+nav ul {
   list-style: none;
   padding: 0;
-}
-
-header nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.capa {
-  background: url('images/capa.jpg') no-repeat center center/cover;
-  height: 300px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  color: white;
-  text-shadow: 1px 1px 4px black;
+  gap: 1em;
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-.grid img, .grid video {
-  width: 100%;
-  border-radius: 8px;
+section {
+  padding: 2em;
+  background: #fff;
+  margin: 1em auto;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
 }

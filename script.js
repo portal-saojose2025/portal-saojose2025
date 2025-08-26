@@ -1,27 +1,25 @@
 // Carregar fotos automaticamente
-async function carregarFotos() {
-  const fotosContainer = document.getElementById("fotos");
-  const fotos = ["foto1.jpg", "foto2.jpg", "foto3.jpg"]; // adicione mais nomes
+document.addEventListener("DOMContentLoaded", () => {
+  const fotosContainer = document.getElementById("galeria-fotos");
+  const videosContainer = document.getElementById("galeria-videos");
+
+  const fotos = ["capa.jpg"]; // Aqui será automático no servidor real
   fotos.forEach(foto => {
-    const img = document.createElement("img");
-    img.src = "images/" + foto;
+    let img = document.createElement("img");
+    img.src = `images/${foto}`;
+    img.alt = "Foto de São José do Gorutuba";
+    img.style.maxWidth = "200px";
+    img.style.margin = "10px";
     fotosContainer.appendChild(img);
   });
-}
 
-// Carregar vídeos automaticamente
-async function carregarVideos() {
-  const videosContainer = document.getElementById("videos-container");
-  const videos = ["video1.mp4", "video2.mp4"]; // adicione mais nomes
+  const videos = []; // Lista simulada
   videos.forEach(video => {
-    const vid = document.createElement("video");
-    vid.src = "videos/" + video;
+    let vid = document.createElement("video");
+    vid.src = `videos/${video}`;
     vid.controls = true;
+    vid.style.maxWidth = "300px";
+    vid.style.margin = "10px";
     videosContainer.appendChild(vid);
   });
-}
-
-window.onload = () => {
-  carregarFotos();
-  carregarVideos();
-};
+});

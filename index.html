@@ -1,34 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal São José do Gorutuba</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Oficial — São José do Gorutuba</title>
+  <meta name="description" content="História, cultura, turismo e cidadania — São José do Gorutuba" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="images/capa.jpg" alt="Capa do Portal São José do Gorutuba" class="capa">
-    <nav>
-      <ul>
-        <li><a href="#historia">História</a></li>
-        <li><a href="#turismo">Turismo</a></li>
-        <li><a href="#romeiros">Romeiros</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#doacoes">Doações</a></li>
-      </ul>
-    </nav>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="/" class="logo" aria-label="Portal São José do Gorutuba">São José do Gorutuba</a>
+      <nav class="main-nav" role="navigation" aria-label="Menu principal">
+        <button id="navToggle" aria-expanded="false" aria-controls="navList">Menu</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pages/sobre.html">História</a></li>
+          <li><a href="pages/blog.html">Blog</a></li>
+          <li><a href="pages/eventos.html">Eventos</a></li>
+          <li><a href="pages/apoiadores.html">Apoiadores</a></li>
+          <li><a href="pages/contact.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="historia"><h2>História</h2><p>Conteúdo sobre a história...</p></section>
-    <section id="turismo"><h2>Turismo</h2><div id="galeria-fotos"></div></section>
-    <section id="romeiros"><h2>Romeiros</h2><div id="galeria-videos"></div></section>
-    <section id="blog"><h2>Blog</h2><p>Postagens e novidades...</p></section>
-    <section id="doacoes"><h2>Doações</h2><p>Ajude a restaurar São José do Gorutuba.</p><p><strong>PIX:</strong> 38998891175</p></section>
+  <main id="main" role="main">
+    <section class="hero">
+      <div class="hero-content container" aria-hidden="false">
+        <h1>Portal Oficial do São José do Gorutuba</h1>
+        <p>História, fé, cultura e turismo. Junte-se à restauração e às ações solidárias.</p>
+        <a class="btn primary" href="pages/sobre.html">Conheça a história</a>
+        <a class="btn outline" href="pages/apoiadores.html">Como ajudar</a>
+      </div>
+    </section>
+
+    <section class="features container" aria-labelledby="featuresTitle">
+      <h2 id="featuresTitle">Seções em destaque</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Blog</h3>
+          <p>Notícias, pesquisas históricas e depoimentos locais.</p>
+          <a href="pages/blog.html">Ver o blog</a>
+        </article>
+        <article class="card">
+          <h3>Eventos</h3>
+          <p>Festas, romarias e festas do Divino.</p>
+          <a href="pages/eventos.html">Próximos eventos</a>
+        </article>
+        <article class="card">
+          <h3>Galeria</h3>
+          <p>Fotos e vídeos da região e da igreja.</p>
+          <a href="pages/galeria.html">Ver galeria</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter container" aria-labelledby="newsletterTitle">
+      <h2 id="newsletterTitle">Cadastro</h2>
+      <p>Cadastre-se para receber novidades por e-mail e WhatsApp</p>
+      <form id="subscribeForm" method="post" action="/api/subscribe">
+        <label for="name">Nome</label>
+        <input id="name" name="name" required />
+        <label for="email">E-mail</label>
+        <input id="email" type="email" name="email" required />
+        <button class="btn primary" type="submit">Inscrever</button>
+      </form>
+    </section>
+
   </main>
 
-  <footer><p>© 2025 Portal São José do Gorutuba</p></footer>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>Portal Oficial — São José do Gorutuba • Contato: tecnicojigabit.1832@gmail.com • WhatsApp: (38) 99889-1175</p>
+      <p>PIX para doações: 38998891175 (Derenice)</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
